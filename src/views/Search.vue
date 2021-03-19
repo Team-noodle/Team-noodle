@@ -1,13 +1,17 @@
 <template>
   <div>
-    検索
-    <div id="v-for">
-    <h3>v-for</h3>
-    <div v-for="cooking recipie">{{recipe}}</div>    
+    入力フォーム
+    <div id="v-for=(cooking,index) in recipe" :key="index">
+    {{ index }}:{{ cooking.categoryname }}:
+
+    <!-- <a href="cookig.categoryUrl">{{ cooking.categoryUrl }}</a> -->
   </div>
   <button @click="cooking">検索</button>
-</div>  
-</template>
+  <input v-model="message" placeholder="入力"> 
+  <p> {{message}} </p>
+  </div> 
+  
+ </template>
 
 <script>
 export default {
@@ -15,28 +19,44 @@ export default {
     return {
       recipe: [
         {
-          categoryname:"ハンバーグ"
-          url:""
-        }
+           id: 1,
+            name: "ハンバーグ"
+          
+        },
         {
-          categoryname:"パスタ"
-          url:"" 
-        }
+           id: 2,
+            name: "パスタ"
+          
+        },
          {
-          categoryname:"かつ丼"
-          url:"" 
-        } {
-          categoryname:"ポテトサラダ"
-          url:"" 
-        } {
-          categoryname:"肉じゃが"
-          url:"" 
+           id: 3,
+            name: "かつ丼"
+          
+        }, 
+        {
+           id: 4,
+            name: "ポテトサラダ"
+          
+        }, 
+        {
+           id: 5,
+            name: "肉じゃが"
+          
         }
-      ]
-    }
-  }
-}
-    
+      ],
+    };
+  },
+  
 
+methods: {
+    cooking(){
+     const a = "ハンバーグ"
+     const ary = ["ハンバーグ", "パスタ", "肉じゃが"]
+     const result = ary.find(item => item === a)
+     console.log(result);
+     }
+     
+
+}
+}  
 </script>
-<style></style>
