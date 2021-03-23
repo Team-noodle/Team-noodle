@@ -26,6 +26,7 @@ fetch("https://app.rakuten.co.jp/services/api/Recipe/CategoryList/20170426?forma
     
     console.log(data)
     this.recipe.push(data.result.small)
+    console.log()
   })
 }}}
 </script>

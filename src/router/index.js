@@ -1,16 +1,3 @@
-
-import Vue from "vue";
-import VueRouter from "vue-router";
-import Home from "../views/Home.vue";
-import Design from "../views/Design.vue";
-Vue.use(VueRouter);
-
-const routes = [
-  {
-    path: "/design",
-    name: "Design",
-    component: Design,
-
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
