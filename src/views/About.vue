@@ -3,12 +3,12 @@
   <div class="top">
     <div class="mes"><font size="6" color="#86AAD7">youtubeで検索</font>
   <br>
-  <input size="40"  v-model="keyword" placeholder="検索キーワードを入力">
+  <input size="40" height="50"  v-model="keyword" placeholder="検索キーワードを入力">
   <button class="kensaku" @click="search_video">探す</button>
   </div>
   
   </div>
-  <img class="pcture" src="../assets/food.jpg">
+  <img class="pcture" v-show="button" src="../assets/food.jpg">
    <table cellspacing="0" cellpadding="5" v-show="results">
   
 
@@ -52,7 +52,8 @@ export default {
   },
   props: {
     msg: String,
-    image: String
+    image: String,
+
   },
   methods: {
     search_video: function() {
@@ -103,7 +104,7 @@ export default {
   padding-bottom: 20px;
 }
 .picture{
-  border-image: space;
+  border-image: ;
   height: 100;
 }
 
