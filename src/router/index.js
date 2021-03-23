@@ -1,9 +1,10 @@
+
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import Search from '../views/Search.vue'
 import Cooking from '../views/Cooking.vue'
-
+import Design from "../views/Design.vue";
 Vue.use(VueRouter)
 
 const routes = [
@@ -29,6 +30,11 @@ const routes = [
 
     component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
   },
+   {
+    path: "/design",
+    name: "Design",
+    component: Design,
+   },
   {
     path: '/Search',
     name: 'Search',
