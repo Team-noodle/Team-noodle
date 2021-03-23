@@ -1,24 +1,29 @@
 <template>
   <div class="main">
-  <div><font class="top">youtubeで検索</font></div>
+  <div class="top">
+    <div class="mes"><font size="6" color="#86AAD7">youtubeで検索</font>
   <br>
-  <input size="40" v-model="keyword" placeholder="検索キーワードを入力">
-  <button @click="search_video">検索</button>
+  <input size="40"  v-model="keyword" placeholder="検索キーワードを入力">
+  <button class="kensaku" @click="search_video">探す</button>
+  </div>
+  
+  </div>
+  <img class="pcture" src="../assets/food.jpg">
    <table cellspacing="0" cellpadding="5" v-show="results">
   
 
     <tr v-for="(movie, index) in results" v-bind:key="movie.id.videoId">
       <!-- No -->
-      <td valign="top" width="50">{{ index + 1 }}</td>
-      <!-- Video -->
+      <td  valign="top" width="50" color="#C88A4D">{{ index + 1 }}</td>
+      
       <td valign="top" width="300">
         <a v-bind:href="'https://www.youtube.com/watch?v=' + movie.id.videoId">
           <img width="300" height="200" v-bind:src="movie.snippet.thumbnails.medium.url">
         </a>
       </td>
-     <!-- titleとdescription -->
+     
       <td align="left" valign="top" width="700">
-        <font size="5" color="#c71585"><b>{{ movie.snippet.title }}</b></font>
+        <font size="5" color="#C88A4D"><b>{{ movie.snippet.title }}</b></font>
         <br>
         {{ movie.snippet.description}}</td>
     </tr>
@@ -46,7 +51,8 @@ export default {
     };
   },
   props: {
-    msg: String
+    msg: String,
+    image: String
   },
   methods: {
     search_video: function() {
@@ -64,14 +70,41 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .main{
   background-color: rgb(255, 235, 147);
+   min-height: 100vh;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+   background-image: 
+    linear-gradient(to left,   transparent 100px, rgb(255, 236, 174)),
+    linear-gradient(to bottom, transparent 100px, rgb(255, 212, 95));
 }
-.top{
+
+.kensaku{
+  color: rgb(3, 3, 3);
+  background-color: #86AAD7;
+   border-radius: 5px;
+   margin: 30px auto;
   
-  font-size: 20px;
-  color: rgb(101, 173, 201);
+}
+
+.top{
+  background-color: rgb(255, 255, 255);
+   position: sticky;
+    top: 0;
+
+}
+
+.mes{
+  widows: 100%;
+  height: 100px;
+  padding-bottom: 20px;
+}
+.picture{
+  border-image: space;
+  height: 100;
 }
 
 </style>

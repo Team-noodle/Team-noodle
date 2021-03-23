@@ -1,28 +1,31 @@
 <template>
+<div class="header">
   <div id="app">
     <div id="nav">
       <router-link to="/">Home</router-link> |
-
-      <router-link to="/about">About</router-link> |
-       <router-link to="/search">Search</router-link>
-      <router-link to="/design">Design</router-link>
-      <router-link to="/cooking">cooking</router-link>
+      <router-link to="/about">youtube</router-link> |
+       <router-link to="/search">recipe</router-link>|
     </div>
     <router-view />
+  </div>
   </div>
 </template>
 
 <style>
+
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+  background: cornsilk;
 }
 
 #nav {
   padding: 30px;
+  
 }
 
 #nav a {
@@ -32,5 +35,6 @@
 
 #nav a.router-link-exact-active {
   color: #42b983;
+  background: rgb(255, 230, 129);
 }
 </style>
