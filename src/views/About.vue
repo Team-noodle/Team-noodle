@@ -3,12 +3,13 @@
   <div class="top">
     <div class="mes"><font size="6" color="#86AAD7">youtubeで検索</font>
   <br>
-  <input size="40" height="50"  v-model="keyword" placeholder="検索キーワードを入力">
-  <button class="kensaku" @click="search_video">探す</button>
+  <div class="kensaku">
+    <fa-icon icon="user-secret"></fa-icon>
+  <input size="40" height="50" id="sbox4" v-model="keyword" placeholder="検索キーワードを入力">
+  <button id="sbtn4" class="kensaku" @click="search_video"><font-awesome-icon icon="search" /></button>
   </div>
-  
   </div>
-  <img class="pcture" v-show="button" src="../assets/food.jpg">
+  </div>
    <table cellspacing="0" cellpadding="5" v-show="results">
   
 
@@ -54,6 +55,7 @@ export default {
     msg: String,
     image: String,
 
+
   },
   methods: {
     search_video: function() {
@@ -72,40 +74,97 @@ export default {
 </script>
 
 <style scoped>
+/* table{
+  background-color: rgba(255, 255, 240, 0.685);
+  text-align: center;
+} */
+
 .main{
-  background-color: rgb(255, 235, 147);
+  text-align: center;
    min-height: 100vh;
   background-attachment: fixed;
   background-size: cover;
   background-position: center;
-   background-image: 
+  background-image:url(../assets/newcook.jpg);
+   /* background-image: radial-gradient(rgba(255, 255, 251, 0.507) 15%, transparent 20%),
+                      radial-gradient(rgba(255, 253, 223, 0.493) 15%, transparent 20%),
+                      linear-gradient(135deg, #fcffce 0%,#fcfbb5 40%,#ffe798 60%,#ffee56 100%);
+    background-size: 30px 30px, 30px 30px, 100% 100%;
+    background-position: 0 0, 15px 15px, center center; */
+   /* background-image: 
     linear-gradient(to left,   transparent 100px, rgb(255, 236, 174)),
-    linear-gradient(to bottom, transparent 100px, rgb(255, 212, 95));
+    linear-gradient(to bottom, transparent 100px, rgb(255, 212, 95)); */
 }
 
 .kensaku{
-  color: rgb(3, 3, 3);
-  background-color: #86AAD7;
-   border-radius: 5px;
-   margin: 30px auto;
+  margin-bottom: 30px;
+
   
 }
 
 .top{
-  background-color: rgb(255, 255, 255);
+    background-image: 
+    linear-gradient(to left,   transparent 100px, rgb(252, 226, 140)),
+    linear-gradient(to bottom, transparent 100px, rgb(255, 212, 95));
+  background-color: rgb(255, 239, 185);
    position: sticky;
     top: 0;
 
 }
 
+
+
+
 .mes{
+  /* 検索欄 */
   widows: 100%;
   height: 100px;
   padding-bottom: 20px;
+   flex-direction: column;
+  justify-content: center;
+  background-image: radial-gradient(rgba(255, 255, 251, 0.507) 15%, transparent 20%),
+                      radial-gradient(rgba(255, 253, 223, 0.493) 15%, transparent 20%),
+                      linear-gradient(135deg, #f9ffac 0%,#fdf479 40%,#ffe798 60%,#ffee56 100%);
+    background-size: 30px 30px, 30px 30px, 100% 100%;
+    background-position: 0 0, 15px 15px, center center;
 }
-.picture{
-  border-image: ;
-  height: 100;
+
+table{
+  background-color: rgba(252, 251, 199, 0.74);
+}
+
+#sbox4{
+  height:50px;
+padding:0 10px; 
+
+/* position:absolute; 
+left:50;
+top:50;  */
+border-radius:20px;
+outline:0;
+background:rgb(255, 254, 209);
+font-size: initial;
+}
+
+#sbtn4 :hover{
+  background-color: #fff;
+}
+
+#sbtn4{
+height:50px;
+/* position:absolute; 
+left:255px;アイコン左右の位置調整 */
+background:none;
+color:rgb(75, 50, 34);
+border:none;
+font-size:20px;/*アイコンサイズ*/
+}
+
+
+
+
+#sbtn4 .fa-search{
+font-size:20px;	
 }
 
 </style>
